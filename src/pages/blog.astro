@@ -14,7 +14,7 @@ const sortedPosts = allPosts.sort((a, b) => {
 
   <div class="text-xl font-bold mb-5">新着記事</div>
   <ul class="grid md:grid-cols-2 sm:grid-cols-1">
-    {sortedPosts.map((post) => <BlogCard url={post.url} title={post.frontmatter.title} pubDate={post.frontmatter.pubDate} />)}
+    {sortedPosts.map((post) => <BlogCard url={post.url} title={post.frontmatter.title} pubDate={post.frontmatter.pubDate} icon={post.frontmatter.icon} />)}
   </ul>
   </div>
 </BaseLayout>

@@ -4,6 +4,7 @@ title: 'Scrapboxを使ってみた'
 pubDate: 2022-08-27
 description: 'Scrapboxを使ってみるお話'
 tags: ["Scrapbox", "メモ"]
+icon: "📝"
 ---
 
 最近[Scrapbox](https://scrapbox.io)を使い始めました。

@@ -1,5 +1,5 @@
 ---
-const {title, url, pubDate} = Astro.props;
+const {title, url, pubDate, icon} = Astro.props;
 ---
 
 <li class="p-0 m-0">
@@ -7,7 +7,7 @@ const {title, url, pubDate} = Astro.props;
         <div class="flex  p-4 rounded-lg hover:bg-gray-50 active:bg-gray-50">
             <div class="bg-white w-16 aspect-square flex items-center justify-center rounded-lg mr-4 shadow-sm">
                 <div class="text-3xl">
-                    🔖
+                    {icon}
                 </div>
             </div>
             <div class="justify-between">
