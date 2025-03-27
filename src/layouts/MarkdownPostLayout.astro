@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import TagButton from '../components/TagButton.astro';
 const { frontmatter } = Astro.props;
 ---
 
@@ -30,7 +31,7 @@ const { frontmatter } = Astro.props;
       prose-img:rounded-lg prose-img:shadow-md">
       <div class="not-prose">
         {frontmatter.tags.map((tag: string) => (
-          <a class="inline-block py-2 px-4 mr-2  bg-white border border-gray-600 rounded-2xl hover:bg-gray-600 active:bg-gray-600 hover:text-white duration-200" href={`/tags/${tag}`}>{tag}</a>
+          <TagButton tag={tag} />
         ))}
       </div>
 
