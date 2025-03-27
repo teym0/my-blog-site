@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import BlogCard from '../components/BlogCard.astro'
 import iconImage from '../assets/icon.png';
+import TagButton from '../components/TagButton.astro';
 const allPosts = await Astro.glob('../pages/posts/*.md');
 const pageTitle = "ブログ";
 
@@ -9,6 +10,8 @@ const pageTitle = "ブログ";
 const sortedPosts = allPosts.sort((a, b) => {
   return new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime();
 });
+
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
 ---
 <BaseLayout pageTitle={pageTitle}>
   <div class="px-4 py-8">
@@ -56,8 +59,14 @@ const sortedPosts = allPosts.sort((a, b) => {
     </div>
   </div>
 
+  <div class="text-xl font-bold mb-5">タグ</div>
+    <div class="flex">
+        {tags.map((tag) => (
+            <p class="tag"><TagButton tag={tag} /></p>
+        ))}
+    </div>
 
-  <div class="text-xl font-bold mb-5">新着記事</div>
+  <div class="text-xl font-bold mb-5 mt-15">新着記事</div>
   <ul class="grid md:grid-cols-2 sm:grid-cols-1">
     {sortedPosts.map((post) => <BlogCard url={post.url} title={post.frontmatter.title} pubDate={post.frontmatter.pubDate} icon={post.frontmatter.icon} />)}
   </ul>
