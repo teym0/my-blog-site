@@ -3,7 +3,7 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Scrapboxを使ってみた'
 pubDate: 2022-08-27
 description: 'Scrapboxを使ってみるお話'
-tags: ["Scrapbox", "メモ"]
+tags: ["Scrapbox"] 
 icon: "📝"
 ---
 
