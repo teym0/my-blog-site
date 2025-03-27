@@ -2,3 +2,8 @@
 @plugin '@tailwindcss/typography';
 
 
+
+img {
+    max-height: 500px;
+    object-fit: contain;
+}
